@@ -1,0 +1,29 @@
+:root {
+  --bar-height: 40px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.button {
+  height: var(--bar-height);
+  border: 1px solid var(--border-color);
+  border-right: 0;
+  background: none;
+  border-radius: 8px 0 0 8px;
+  width: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  border-radius: 0 8px 8px 0;
+  border-left: 0;
+  flex: 1;
+
+  padding-left: 5px;
+}

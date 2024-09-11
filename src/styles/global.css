@@ -3,14 +3,18 @@
   --secondary-color: #2ecc71;
   --light-color: #fff;
   --bg-color: #EEEEEE;
+  --border-color: #8A94A4;
 
   --spacing-unit: 8px;
 
   --breakpoint-lg: 1024px;
+
+  font-size: 10px;
 }
 
 body {
   font-family: sans-serif;
+  font-size: 1.6rem;
 }
 
 .container {
@@ -23,4 +27,16 @@ body {
 
 button {
   cursor: pointer;
+}
+
+input {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  height: 40px;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+input::placeholder {
+  color: var(--border-color);
 }

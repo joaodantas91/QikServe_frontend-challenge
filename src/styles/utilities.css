@@ -1,0 +1,57 @@
+/* Margin Top */
+.mt-1 {
+  margin-top: var(--spacing-unit);
+}
+
+.mt-2 {
+  margin-top: calc(var(--spacing-unit) * 2);
+}
+
+/* Margin Bottom */
+.mb-1 {
+  margin-bottom: var(--spacing-unit);
+}
+
+.mb-2 {
+  margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+/* Margin Left */
+.ml-1 {
+  margin-left: var(--spacing-unit);
+}
+
+.ml-2 {
+  margin-left: calc(var(--spacing-unit) * 2);
+}
+
+/* Margin Right */
+.mr-1 {
+  margin-right: var(--spacing-unit);
+}
+
+.mr-2 {
+  margin-right: calc(var(--spacing-unit) * 2);
+}
+
+/* Margin Vertical (Top and Bottom) */
+.my-1 {
+  margin-top: var(--spacing-unit);
+  margin-bottom: var(--spacing-unit);
+}
+
+.my-2 {
+  margin-top: calc(var(--spacing-unit) * 2);
+  margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+/* Margin Horizontal (Left and Right) */
+.mx-1 {
+  margin-left: var(--spacing-unit);
+  margin-right: var(--spacing-unit);
+}
+
+.mx-2 {
+  margin-left: calc(var(--spacing-unit) * 2);
+  margin-right: calc(var(--spacing-unit) * 2);
+}

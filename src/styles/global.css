@@ -1,5 +1,26 @@
 :root {
   --primary-color: #4F372F;
   --secondary-color: #2ecc71;
+  --light-color: #fff;
   --bg-color: #EEEEEE;
+
+  --spacing-unit: 8px;
+
+  --breakpoint-lg: 1024px;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  /* 16px for each side padding */
+  max-width: calc(1024px + 16px + 16px);
+  margin: 0 auto;
+  padding: 0 16px;
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
 }

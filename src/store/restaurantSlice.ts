@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { Restaurant } from '../types/restaurantDetails';
-import { RestaurantMenu } from '../types/restaurantMenu';
+import { Restaurant } from '@/types/restaurantDetails';
+import { RestaurantMenu } from '@/types/restaurantMenu';
 
 interface RestaurantState {
   detail: Restaurant | null

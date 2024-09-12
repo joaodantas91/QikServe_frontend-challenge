@@ -1,10 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Banner } from "./components/Banner";
-import { Navbar } from "./components/Navbar";
-import { SearchBar } from "./components/SearchBar";
-import { AppDispatch, RootState } from "./store/store";
+import { Banner, Navbar, SearchBar } from "@/components";
+import { AppDispatch, RootState } from "@/store/store";
 import { useEffect } from "react";
-import { fetchRestaurantDetails, fetchRestaurantMenu } from "./store/restaurantSlice";
+import { fetchRestaurantDetails, fetchRestaurantMenu } from "@/store/restaurantSlice";
 
 function App () {
   const dispatch = useDispatch<AppDispatch>();
@@ -38,7 +36,7 @@ function App () {
       <Navbar />
       <Banner />
       <div className="container my-2">
-        <SearchBar className="my-2" />
+        <SearchBar />
       </div>
 
       <div className="container my-2">

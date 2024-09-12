@@ -12,6 +12,9 @@ export default defineConfig({
     setupFiles: ['./src/vitest.setup.ts'],
     css: true,
   },
+  resolve: {
+    alias: [{ find: '@', replacement: '/src' }],
+  },
   plugins: [react()],
 })
 

@@ -1,8 +1,10 @@
 :root {
-  --primary-color: #4F372F;
-  --secondary-color: #2ecc71;
+  --nav-background-color: #000;
+  --primary-color: #000;
+  --primary-color-hover: #000;
+  --bg-color: #ffffff;
+
   --light-color: #fff;
-  --bg-color: #EEEEEE;
   --border-color: #8A94A4;
 
   --spacing-unit: 8px;
@@ -15,6 +17,7 @@
 body {
   font-family: sans-serif;
   font-size: 1.6rem;
+  background: #EEEEEE;
 }
 
 .container {

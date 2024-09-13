@@ -1,11 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Banner, Navbar, SearchBar, Menu } from "@/components";
+import { Banner, Navbar, SearchBar, Menu, ModalManager, Basket } from "@/components";
 import { AppDispatch, RootState } from "@/store/store";
 import { useEffect } from "react";
 import { fetchRestaurantDetails, fetchRestaurantMenu } from "@/store/restaurantSlice";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 function App () {
   const dispatch = useDispatch<AppDispatch>();
-
+  const lg = useMediaQuery("(min-width: 1024px)");
   const { detail, status, error } = useSelector.withTypes<RootState>()((state: RootState) => state.restaurant);
   useEffect(() => {
     dispatch(fetchRestaurantDetails())
@@ -37,10 +38,14 @@ function App () {
         </div>
         <div className="content">
           <Menu />
+          {lg &&
+            <div><Basket /></div>
+          }
 
-          <div></div>
+
         </div>
       </div>
+      <ModalManager />
     </>
   );
 }

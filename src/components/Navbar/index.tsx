@@ -1,6 +1,6 @@
 import classes from './styles.module.css';
-import { useMediaQuery } from '../../hooks/useMediaQuery';
-import HamburguerIcon from '../../assets/icons/hamburguer-icon.svg'
+import { useMediaQuery } from '@/hooks/useMediaQuery';
+import HamburguerIcon from '@/assets/icons/hamburguer-icon.svg'
 
 export function Navbar () {
   const lg = useMediaQuery("(min-width: 1024px)");

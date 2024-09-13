@@ -1,4 +1,4 @@
-type MenuItemModifier = {
+export type MenuItemModifier = {
   id: number;
   name: string;
   minChoices: number;

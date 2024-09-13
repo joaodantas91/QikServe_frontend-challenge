@@ -63,6 +63,20 @@ input::placeholder {
   color: var(--border-color);
 }
 
+.button-rounded {
+  width: 100%;
+  border: none;
+  background: var(--primary-color);
+  border-radius: 100px;
+  color: var(--light-color);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.09px;
+  letter-spacing: 0.75px;
+  text-align: center;
+  padding: 13.5px;
+}
+
 @media (min-width: 1024px) {
   body {
     background: #EEEEEE;

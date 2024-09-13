@@ -8,7 +8,7 @@ import { formatCurrency } from '@/utils/formatCurrency';
 export function Basket () {
   const dispatch = useDispatch();
   const basket = useSelector((state: RootState) => state.basket);
-  const { detail, status, menu } = useSelector.withTypes<RootState>()((state: RootState) => state.restaurant);
+  const { detail, status } = useSelector.withTypes<RootState>()((state: RootState) => state.restaurant);
 
   const handleAddItem = (item: BasketItem) => {
     dispatch(addItem({ ...item, quantity: 1 }));

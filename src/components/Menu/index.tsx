@@ -21,7 +21,7 @@ export function Menu () {
   useEffect(() => {
     const handleScroll = () => {
       if (stickyRef.current) {
-        setIsSticky(window.scrollY - 82 >= stickyRef.current.getBoundingClientRect().top + window.scrollY);
+        setIsSticky(stickyRef.current.getBoundingClientRect().top <= 0 && window.scrollY > 0);
       }
     };
 
@@ -66,9 +66,20 @@ export function Menu () {
       {detail && menu?.sections.map((section, index) => (
         <div key={section.id} ref={setRef(index)}>
           <Accordion title={section.name}>
-            {section.items.map(item => (
-              <MenuAccordionItem key={item.id} menuItem={item} price={formatCurrency(item.price, detail.locale, detail.ccy)} />
-            ))}
+            {section.items.map(item => {
+              const price = (() => {
+                if (item.modifiers) {
+                  return item.modifiers[0].items[0].price
+                }
+                return item.price
+              })();
+
+              return (
+
+                <MenuAccordionItem key={item.id} menuItem={item} price={formatCurrency(price, detail.locale, detail.ccy)} />
+              )
+
+            })}
           </Accordion>
 
         </div>

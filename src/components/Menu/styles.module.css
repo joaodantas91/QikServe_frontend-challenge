@@ -13,7 +13,7 @@
 
 
   position: sticky;
-  top: calc(var(--img-size) * -1);
+  top: calc((var(--img-size) * -1) - 20px);
 }
 
 .scroll-box.is-sticky {
@@ -22,6 +22,7 @@
 
 .section-button {
   letter-spacing: 0.5px;
+
 
   flex-shrink: 0;
   display: flex;

@@ -3,6 +3,10 @@
   gap: calc(var(--spacing-unit) * 2);
   justify-content: space-between;
   padding: calc(var(--spacing-unit) * 2);
+  border: 0;
+  background: transparent;
+  width: 100%;
+  text-align: left;
 }
 
 .accordion-item--wrapper>div {
@@ -24,6 +28,23 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 18.75px;
+  display: flex;
+  align-items: center;
+}
+
+.accordion-item--title>span {
+  min-width: 18px;
+  height: 18px;
+  background: var(--primary-color);
+  color: var(--light-color);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  margin-right: var(--spacing-unit);
 }
 
 .accordion-item--description {

@@ -107,4 +107,6 @@ As the description of the challenge restricted which technologies were allowed t
 Right from the start of the project it was very challenging, I had to make decisions that would impact on the construction of the project, for example on how to show the Item Page as a screen that covered everything and then as a modal, following a similar reasoning with the Cart too, where I wanted to reuse the styling code and be able to present them in the same way.
 I had experience using Zustand for state management and this experience helped me understand how to structure Redux and showed me how robust it is.
 
+In addition, during the period in which I took the test, I had little time to work on it, which made me a little sad because I knew I could do better, but I'm very satisfied with the complexity and quality I was able to achieve given these cons
+
   

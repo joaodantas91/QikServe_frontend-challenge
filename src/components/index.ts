@@ -2,3 +2,4 @@
 export { Banner } from './Banner';
 export { Navbar } from './Navbar';
 export { SearchBar } from './SearchBar';
+export { Menu } from './Menu'; 

@@ -1,9 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Banner, Navbar, SearchBar } from "@/components";
+import { Banner, Navbar, SearchBar, Menu } from "@/components";
 import { AppDispatch, RootState } from "@/store/store";
 import { useEffect } from "react";
 import { fetchRestaurantDetails, fetchRestaurantMenu } from "@/store/restaurantSlice";
-
 function App () {
   const dispatch = useDispatch<AppDispatch>();
 
@@ -23,26 +22,25 @@ function App () {
 
   }, [detail]);
 
-  useEffect(() => {
-    console.log({ status })
-  }, [status]);
-
-
   if (status === "idle" || status === "pending") return <></>;
   if (error) return <div>Error: {error}</div>;
 
   return (
+
     <>
       <Navbar />
       <Banner />
-      <div className="container my-2">
-        <SearchBar />
+      <div className="container">
+        <div className="py-2">
+          <SearchBar />
+
+        </div>
+        <div className="content">
+          <Menu />
+
+          <div></div>
+        </div>
       </div>
-
-      <div className="container my-2">
-      </div>
-
-
     </>
   );
 }

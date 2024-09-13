@@ -1,0 +1,41 @@
+.accordion-item--wrapper {
+  display: flex;
+  gap: calc(var(--spacing-unit) * 2);
+  justify-content: space-between;
+  padding: calc(var(--spacing-unit) * 2);
+}
+
+.accordion-item--wrapper>div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing-unit) / 2);
+}
+
+.accordion-item--wrapper img {
+  width: 128px;
+  height: 85px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 6px;
+}
+
+.accordion-item--title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18.75px;
+}
+
+.accordion-item--description {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.accordion-item--price {
+  font-weight: 500;
+  line-height: 18.75px;
+  letter-spacing: 0.5px;
+}

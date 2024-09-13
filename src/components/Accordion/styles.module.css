@@ -1,0 +1,31 @@
+.accordion-button {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: calc(var(--spacing-unit) * 4);
+  padding-inline: calc(var(--spacing-unit) * 2);
+  padding-bottom: calc(var(--spacing-unit) * 1.5);
+
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28.13px;
+  letter-spacing: 0.5px;
+
+  width: 100%;
+}
+
+.accordion-button svg {
+  transform: rotate(180deg);
+  transition: transform 0.2s;
+}
+
+.accordion-button[aria-expanded="true"] svg {
+  transform: rotate(0);
+}
+
+.accordion-content {
+  overflow: hidden;
+  transition: height 0.2s;
+}

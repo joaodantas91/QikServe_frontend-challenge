@@ -14,7 +14,7 @@ export const fetchRestaurantDetails = createAsyncThunk<Restaurant>(
   'restaurant/fetchDetails',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await fetch(`https://cdn-dev.preoday.com/challenge/venue/9`, {
+      const response = await fetch(`/.netlify/functions/fetchData?endpoint=venue/9`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -39,7 +39,7 @@ export const fetchRestaurantMenu = createAsyncThunk<RestaurantMenu>(
   'restaurant/fetchMenu',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await fetch(`https://cdn-dev.preoday.com/challenge/menu`, {
+      const response = await fetch(`/.netlify/functions/fetchData?endpoint=menu`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

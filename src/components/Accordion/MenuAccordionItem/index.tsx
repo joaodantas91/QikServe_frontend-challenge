@@ -14,7 +14,7 @@ type MenuAccordionItemProps = {
 export function MenuAccordionItem ({ menuItem, price }: MenuAccordionItemProps) {
   const context = useContext(ModalContext);
   const basket = useSelector((state: RootState) => state.basket);
-  const { detail, status, error } = useSelector.withTypes<RootState>()((state: RootState) => state.restaurant);
+  const { status } = useSelector.withTypes<RootState>()((state: RootState) => state.restaurant);
 
 
 

@@ -16,6 +16,16 @@ export default defineConfig({
     alias: [{ find: '@', replacement: '/src' }],
   },
   plugins: [react()],
+  server: {
+    proxy: {
+      // Proxy requests starting with /api to the external API
+      '/api': {
+        target: 'https://cdn-dev.preoday.com/challenge', // Your external API
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''), // Remove /api from the request
+      },
+    },
+  },
 })
 
 

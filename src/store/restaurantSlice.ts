@@ -9,12 +9,15 @@ interface RestaurantState {
   error: string | null
 }
 
+const isDevelopment = import.meta.env.VITE_ENV === 'development';
+const apiBaseUrl = isDevelopment ? '/api/' : '/.netlify/functions/fetchData?endpoint=';
+
 // Async thunks to fetch data
 export const fetchRestaurantDetails = createAsyncThunk<Restaurant>(
   'restaurant/fetchDetails',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await fetch(`/.netlify/functions/fetchData?endpoint=venue/9`, {
+      const response = await fetch(`${apiBaseUrl}venue/9`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -39,7 +42,7 @@ export const fetchRestaurantMenu = createAsyncThunk<RestaurantMenu>(
   'restaurant/fetchMenu',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await fetch(`/.netlify/functions/fetchData?endpoint=menu`, {
+      const response = await fetch(`${apiBaseUrl}menu`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

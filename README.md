@@ -42,7 +42,28 @@ npm install
 
 ```
 
-4.  **Start the development server:**
+4. **Create the .env file:**
+
+In the root of your project, create a .env file to define your environment variables:
+
+```bash
+
+touch .env
+
+```
+
+Then, open the .env file and add the following content:
+
+
+```bash
+
+VITE_ENV=development
+
+```
+
+This will set up the environment variable needed to determine the environment (development or production).
+
+1.  **Start the development server:**
 
 ```bash
 

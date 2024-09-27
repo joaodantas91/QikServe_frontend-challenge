@@ -14,7 +14,7 @@ type MenuAccordionItemProps = {
 export function MenuAccordionItem ({ menuItem, price }: MenuAccordionItemProps) {
   const context = useContext(ModalContext);
   const basket = useSelector((state: RootState) => state.basket);
-  const { status } = useSelector.withTypes<RootState>()((state: RootState) => state.restaurant);
+  const { detailStatus } = useSelector.withTypes<RootState>()((state: RootState) => state.restaurant);
 
 
 
@@ -23,7 +23,7 @@ export function MenuAccordionItem ({ menuItem, price }: MenuAccordionItemProps) 
   useEffect(() => {
     setItemsInBasket(basket.items.filter(item => item.id === menuItem.id)[0]?.quantity || 0)
   }, [basket, menuItem.id])
-
+  console.log({ menuItem });
   return (
     <button
       className={classes["accordion-item--wrapper"]}
@@ -40,8 +40,10 @@ export function MenuAccordionItem ({ menuItem, price }: MenuAccordionItemProps) 
         <strong>
           {price}</strong>
       </div>
+      {
+        menuItem.images && <Lazyimage src={menuItem.images?.[0].image} status={detailStatus} />
+      }
 
-      <Lazyimage src={menuItem.images[0].image} status={status} />
 
     </button >
   )

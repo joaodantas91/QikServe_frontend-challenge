@@ -5,7 +5,8 @@ import { RestaurantMenu } from '@/types/restaurantMenu';
 export interface RestaurantState {
   detail: Restaurant | null
   menu: RestaurantMenu | null
-  status: 'idle' | 'pending' | 'succeeded' | 'rejected',
+  detailStatus: 'idle' | 'pending' | 'succeeded' | 'rejected',
+  menuStatus: 'idle' | 'pending' | 'succeeded' | 'rejected',
   error: string | null
 }
 
@@ -19,6 +20,7 @@ export const fetchRestaurantDetails = createAsyncThunk<Restaurant>(
     try {
       const response = await fetch(`${apiBaseUrl}venue/9`, {
         method: "GET",
+        cache: "no-store",
         headers: {
           "Content-Type": "application/json",
         },
@@ -44,6 +46,7 @@ export const fetchRestaurantMenu = createAsyncThunk<RestaurantMenu>(
     try {
       const response = await fetch(`${apiBaseUrl}menu`, {
         method: "GET",
+        cache: "no-store",
         headers: {
           "Content-Type": "application/json",
         },
@@ -66,7 +69,8 @@ export const fetchRestaurantMenu = createAsyncThunk<RestaurantMenu>(
 const initialState: RestaurantState = {
   detail: null,
   menu: null,
-  status: 'idle',
+  detailStatus: 'idle',
+  menuStatus: 'idle',
   error: null
 }
 
@@ -76,34 +80,34 @@ const restaurantSlice = createSlice({
   reducers: {
     // clearRestaurant (state) {
     //   state.detail = null;
-    //   state.status = 'idle';
+    //   state.detailStatus = 'idle';
     // },
   },
   extraReducers: (builder) => {
     builder
       // Handle restaurant details
       .addCase(fetchRestaurantDetails.pending, (state) => {
-        state.status = 'pending';
+        state.detailStatus = 'pending';
       })
       .addCase(fetchRestaurantDetails.fulfilled, (state, action) => {
-        state.status = 'succeeded';
+        state.detailStatus = 'succeeded';
         state.detail = action.payload;
       })
       .addCase(fetchRestaurantDetails.rejected, (state, action) => {
-        state.status = 'rejected';
+        state.detailStatus = 'rejected';
         state.error = action.error.message || 'Failed to fetch';
       })
 
       // Handle restaurant menu
       .addCase(fetchRestaurantMenu.pending, (state) => {
-        state.status = 'pending';
+        state.menuStatus = 'pending';
       })
       .addCase(fetchRestaurantMenu.fulfilled, (state, action) => {
-        state.status = 'succeeded';
+        state.menuStatus = 'succeeded';
         state.menu = action.payload;
       })
       .addCase(fetchRestaurantMenu.rejected, (state, action) => {
-        state.status = 'rejected';
+        state.menuStatus = 'rejected';
         state.error = action.error.message || 'Failed to fetch';
       });
 

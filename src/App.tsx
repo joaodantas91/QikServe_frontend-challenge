@@ -7,7 +7,7 @@ import { useMediaQuery } from "@/hooks/useMediaQuery";
 function App () {
   const dispatch = useDispatch<AppDispatch>();
   const lg = useMediaQuery("(min-width: 1024px)");
-  const { detail, status, error } = useSelector.withTypes<RootState>()((state: RootState) => state.restaurant);
+  const { detail, detailStatus, error } = useSelector.withTypes<RootState>()((state: RootState) => state.restaurant);
   useEffect(() => {
     dispatch(fetchRestaurantDetails())
     dispatch(fetchRestaurantMenu())
@@ -23,7 +23,7 @@ function App () {
 
   }, [detail]);
 
-  if (status === "idle" || status === "pending") return <></>;
+  if (detailStatus === "idle" || detailStatus === "pending") return <></>;
   if (error) return <div>Error: {error}</div>;
 
   return (

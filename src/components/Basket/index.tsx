@@ -8,7 +8,7 @@ import { formatCurrency } from '@/utils/formatCurrency';
 export function Basket () {
   const dispatch = useDispatch();
   const basket = useSelector((state: RootState) => state.basket);
-  const { detail, status } = useSelector.withTypes<RootState>()((state: RootState) => state.restaurant);
+  const { detail, detailStatus } = useSelector.withTypes<RootState>()((state: RootState) => state.restaurant);
 
   const handleAddItem = (item: BasketItem) => {
     dispatch(addItem({ ...item, quantity: 1 }));
@@ -18,7 +18,8 @@ export function Basket () {
     dispatch(removeItem(id));
   };
 
-  if (status === "idle" || status === "pending") return <></>;
+
+  if (detailStatus === "idle" || detailStatus === "pending") return <></>;
 
   return (
     <div className={classes["basket"]}>

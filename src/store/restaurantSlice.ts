@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { Restaurant } from '@/types/restaurantDetails';
 import { RestaurantMenu } from '@/types/restaurantMenu';
 
-interface RestaurantState {
+export interface RestaurantState {
   detail: Restaurant | null
   menu: RestaurantMenu | null
   status: 'idle' | 'pending' | 'succeeded' | 'rejected',

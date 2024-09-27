@@ -5,3 +5,4 @@ export { Menu } from './Menu';
 export { MenuItem } from './ModalManager/MenuItem';
 export { ModalManager } from './ModalManager'
 export { Basket } from './Basket'
+export { Lazyimage } from './LazyImage'

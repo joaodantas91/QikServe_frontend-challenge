@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { ModalContext } from "@/context/ModalManagerContext";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
+import { Lazyimage } from "@/components/LazyImage";
 
 type MenuAccordionItemProps = {
   menuItem: MenuItem;
@@ -13,6 +14,7 @@ type MenuAccordionItemProps = {
 export function MenuAccordionItem ({ menuItem, price }: MenuAccordionItemProps) {
   const context = useContext(ModalContext);
   const basket = useSelector((state: RootState) => state.basket);
+  const { detail, status, error } = useSelector.withTypes<RootState>()((state: RootState) => state.restaurant);
 
 
 
@@ -38,9 +40,9 @@ export function MenuAccordionItem ({ menuItem, price }: MenuAccordionItemProps) 
         <strong>
           {price}</strong>
       </div>
-      {menuItem.images?.length > 0 && menuItem.images[0].image &&
-        <img src={menuItem.images[0].image} />
-      }
+
+      <Lazyimage src={menuItem.images[0].image} status={status} />
+
     </button >
   )
 }
